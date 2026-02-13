@@ -8,7 +8,7 @@
     --font-family-sans: "Inter", sans-serif;
     --font-feature-settings: 'liga' 1, 'calt' 1;
     /* fix for Chrome */
-    --font-family-mono: "Sligoil Micro", monospace;
+    --font-family-mono: "JetBrains Mono", "Sligoil Micro", monospace;
     --font-family-body: var(--font-family-sans);
     --font-family-brand: var(--font-family-mono);
     --font-size: 16px;
