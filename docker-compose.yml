@@ -1,6 +1,13 @@
 services:
   postgres:
     image: postgres:18
+    command: >
+      postgres
+      -c max_connections=200
+      -c shared_buffers=8GB
+      -c effective_cache_size=24GB
+      -c work_mem=64MB
+      -c maintenance_work_mem=512MB
     volumes:
       - postgres-data:/var/lib/postgresql
     environment:
@@ -16,6 +23,7 @@ services:
       - xpack.security.enabled=false
       - xpack.security.transport.ssl.enabled=false
       - xpack.security.http.ssl.enabled=false
+      - ES_JAVA_OPTS=-Xms16g -Xmx16g
     volumes:
       - elasticsearch-data:/usr/share/elasticsearch/data
 
@@ -27,7 +35,9 @@ services:
 
   ingest:
     image: ghcr.io/openaleph/ingest-file:5.1.0
-    command: procrastinate worker -q ingest
+    command: procrastinate worker -q ingest --concurrency 10
+    deploy:
+      replicas: 2
     tmpfs:
       - /tmp:mode=777
     volumes:
@@ -41,7 +51,9 @@ services:
 
   analyze:
     image: ghcr.io/openaleph/ftm-analyze:5.1.0
-    command: procrastinate worker -q analyze
+    command: procrastinate worker -q analyze --concurrency 4
+    deploy:
+      replicas: 2
     tmpfs:
       - /tmp:mode=777
     depends_on:
@@ -53,7 +65,9 @@ services:
 
   worker:
     image: ghcr.io/openaleph/openaleph:5.1.0
-    command: procrastinate worker -q openaleph,openaleph-management
+    command: procrastinate worker -q openaleph,openaleph-management --concurrency 8
+    deploy:
+      replicas: 2
     restart: on-failure
     depends_on:
       - postgres
