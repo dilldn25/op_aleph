@@ -112,9 +112,9 @@ $aleph-screen-lg-max-width: 1200px;
 $aleph-navbar-mobile-max-width: $aleph-screen-sm-max-width + $aleph-grid-size *
   12;
 
-// Classic theme: use Blueprint's light-gray tokens for backgrounds
+// Classic theme: pure white backgrounds
 $aleph-breadcrumbs-background: $light-gray4;
-$aleph-page-background: $light-gray5;
+$aleph-page-background: $white;
 $aleph-link-color: $aleph-accent-color;
 $aleph-sidebar-background: $dark-gray5;
 $aleph-sidebar-foreground: $white;
