@@ -23,7 +23,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/dilldn25/op_aleph-ui-base
+          images: ghcr.io/${{ github.repository }}-ui-base
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
@@ -69,7 +69,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/dilldn25/op_aleph-ui
+          images: ghcr.io/${{ github.repository }}-ui
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
