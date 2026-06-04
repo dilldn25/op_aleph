@@ -1,7 +1,7 @@
 @import 'app/variables.scss';
 
 $vertical-spacing: $aleph-grid-size * 5;
-$white: #fff8f1;
+$white: #ffffff;
 
 .HomeScreen {
   background-color: $white;
@@ -13,11 +13,11 @@ $white: #fff8f1;
   }
 
   b {
-    color: $darc-orange-500;
+    color: $aleph-accent-color;
   }
 
   a:hover {
-    color: $darc-orange-500;
+    color: $aleph-accent-color;
   }
 
   &__section {
@@ -97,7 +97,7 @@ $white: #fff8f1;
   &__title-divider {
     width: 20%;
     margin: $aleph-grid-size * 4 auto $aleph-grid-size * 5;
-    border-bottom: 2px solid $darc-orange-500;
+    border-bottom: 2px solid $aleph-accent-color;
     -webkit-border-image: -webkit-linear-gradient(left, white, black);
     display: none;
   }
@@ -144,8 +144,8 @@ $white: #fff8f1;
         }
 
         &:focus {
-          border-color: $darc-orange-500;
-          box-shadow: 0 2px 12px rgba($darc-orange-500, 0.15);
+          border-color: $aleph-accent-color;
+          box-shadow: 0 2px 12px rgba($aleph-accent-color, 0.15);
         }
       }
 
@@ -175,7 +175,7 @@ $white: #fff8f1;
     .AnimatedCount {
       flex: 1;
       border-right: 1px solid rgba($black, 0.1);
-      color: $darc-orange-500;
+      color: $aleph-accent-color;
       text-align: center;
 
       &:last-child {
@@ -325,7 +325,7 @@ $white: #fff8f1;
 
         &:hover {
           background: rgba($black, 0.04) !important;
-          color: $darc-orange-500 !important;
+          color: $aleph-accent-color !important;
         }
       }
 
@@ -426,9 +426,9 @@ $white: #fff8f1;
     font-size: 0.85em;
     font-weight: 500;
     margin-bottom: 20px;
-    background: rgba($darc-orange-500, 0.1);
-    border: 1px solid rgba($darc-orange-500, 0.3);
-    color: $darc-orange-500;
+    background: rgba($aleph-accent-color, 0.1);
+    border: 1px solid rgba($aleph-accent-color, 0.3);
+    color: $aleph-accent-color;
   }
 
   .oa-values {
@@ -448,7 +448,7 @@ $white: #fff8f1;
     &__num {
       font-size: 3em;
       font-weight: 700;
-      color: $darc-orange-500;
+      color: $aleph-accent-color;
       line-height: 1;
       margin-bottom: 16px;
       font-family: var(--font-family-mono, monospace);
@@ -508,11 +508,11 @@ $white: #fff8f1;
     cursor: pointer;
 
     &--primary {
-      background: $darc-orange-500;
+      background: $aleph-accent-color;
       color: #fff !important;
 
       &:hover {
-        background: $darc-orange-900;
+        background: darken($aleph-accent-color, 12%);
       }
     }
 
