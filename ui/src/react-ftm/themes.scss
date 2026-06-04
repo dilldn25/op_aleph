@@ -18,9 +18,9 @@ $themes: (
     tooltipTextColor: $black-70,
     listItemDividerColor: $black-70,
 
-    buttonTextColor: #ff5f33,
+    buttonTextColor: $accent-color,
     buttonTextTransform: none,
-    buttonTextHoverColor: #BD401F,
+    buttonTextHoverColor: darken($accent-color, 10%),
     buttonColor: #fff,
     buttonBorder: 2px solid #fff,
   ),
