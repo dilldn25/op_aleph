@@ -28,7 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/openaleph/aleph-ui
+          images: ghcr.io/dilldn25/op_aleph/aleph-ui
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
