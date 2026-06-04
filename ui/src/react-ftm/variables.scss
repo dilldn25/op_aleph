@@ -1,6 +1,6 @@
-// darc-black and darc-white (aligned with app/variables.scss)
-$black: #1a1a1a;
-$white: #fff;
+// darc-black and darc-white — classic theme uses Blueprint-aligned black and pure white
+$black: #182026;
+$white: #ffffff;
 
 // darc grays
 $darc-gray-50: #F9F9F9;
@@ -76,26 +76,23 @@ $darc-yellow-700: #FFC533;
 $darc-yellow-800: #FDAD2B;
 $darc-yellow-900: #F9841C;
 
-// accent color (keep in sync with app/variables.scss $aleph-accent-color)
-$accent-color: #4A5E78;
-
-// blueprint overrides
-$blue2: $accent-color;
+// Classic theme: Blueprint blue as accent (matches app/variables.scss)
+// NOT overriding $blue2 here — let Blueprint use its default blue palette
+// so network diagram node colors remain standard Blueprint blue.
+$accent-color: #137cbd;
 
 @import '@blueprintjs/core/lib/scss/variables';
 
 $editor-background-color: $black;
-// $editor-border-color: $light-gray1;
 $editor-border-radius: 5px;
 $editor-box-shadow:
   0 0 0 1px rgba(16, 22, 26, 0.1),
   0 2px 6px rgba(16, 22, 26, 0.2);
-
 $standard-border-radius: 5px;
-
 $sidebar-width: 270px;
 $sidebar-gutter: 15px;
 
+// Classic theme: dark text on light background for diagram sidebar
 $text-color-main: $black;
 $text-color-secondary: $darc-gray-600;
 $disabled-color: $darc-gray-400;
@@ -109,7 +106,7 @@ $disabled-color: $darc-gray-400;
 
 $small: 500px;
 $medium: 850px;
-$large: 110px;
+$large: 1100px;
 
 @mixin small {
   @media screen and (max-width: $small) {
