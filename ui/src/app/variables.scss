@@ -5,9 +5,9 @@
 
 $pt-font-family: var(--font-family-sans);
 
-// darc-black and darc-white
-$black: #1a1a1a;
-$white: #fff;
+// Classic theme: pure white + Blueprint-aligned dark
+$black: #182026;
+$white: #ffffff;
 
 // darc grays
 $darc-gray-50: #F9F9F9;
@@ -33,7 +33,7 @@ $darc-green-700: #58D99A;
 $darc-green-800: #51C68C;
 $darc-green-900: #43A473;
 
-// darc oranges
+// darc oranges (kept for DARC palette compatibility, not used as accent)
 $darc-orange-50: #FAEAE8;
 $darc-orange-100: #FECEC0;
 $darc-orange-200: #FEAE98;
@@ -69,25 +69,30 @@ $darc-yellow-700: #FFC533;
 $darc-yellow-800: #FDAD2B;
 $darc-yellow-900: #F9841C;
 
-$pt-text-color: $black;
-$pt-intent-primary: #4A5E78;
+// Classic theme: Blueprint blue as primary intent (no orange override)
+// $pt-intent-primary is left to Blueprint's default blue (#137cbd / $blue3)
 $pt-intent-success: $darc-green-900;
 $pt-intent-warning: $darc-orange-800;
 $pt-intent-danger: $darc-orange-900;
+$pt-text-color: $black;
 
-// Single accent color for the app UI — change this to re-theme
-$aleph-accent-color: #4A5E78;
+// Classic theme: Blueprint blue accent
+// This is the single color to change to re-theme the entire app.
+// Using Blueprint's $blue3 (#137cbd) — set explicitly so blueprint-overrides
+// can reference it before the Blueprint variables are imported below.
+$aleph-accent-color: #137cbd;
 
 $pt-link-color: $aleph-accent-color;
 $pt-icon-color-selected: $aleph-accent-color;
 $pt-app-background-color: $white;
 
-$pt-border-radius: 6px;
-$pt-border-shadow-opacity: 0.06;
-$pt-drop-shadow-opacity: 0.08;
-$pt-dark-border-shadow-opacity: 0;
-$pt-dark-drop-shadow-opacity: 0;
-$pt-input-box-shadow: 0;
+// Classic theme: restore proper shadows and border radius
+$pt-border-radius: 3px;
+$pt-border-shadow-opacity: 0.1;
+$pt-drop-shadow-opacity: 0.2;
+$pt-dark-border-shadow-opacity: 0.2;
+$pt-dark-drop-shadow-opacity: 0.2;
+$pt-input-box-shadow: inset 0 0 0 1px rgba($black, 0.15);
 
 @import '~@blueprintjs/core/lib/scss/variables';
 @import '~@blueprintjs/icons/lib/scss/variables';
@@ -107,30 +112,33 @@ $aleph-screen-lg-max-width: 1200px;
 $aleph-navbar-mobile-max-width: $aleph-screen-sm-max-width + $aleph-grid-size *
   12;
 
-// DARC-aligned semantic tokens
-$aleph-breadcrumbs-background: $darc-gray-100;
-$aleph-page-background: $darc-gray-100;
+// Classic theme: pure white backgrounds
+$aleph-breadcrumbs-background: $light-gray4;
+$aleph-page-background: $white;
 $aleph-link-color: $aleph-accent-color;
-$aleph-sidebar-background: $black;
+$aleph-sidebar-background: $dark-gray5;
 $aleph-sidebar-foreground: $white;
-$aleph-facet-background: $darc-gray-50;
+$aleph-facet-background: $light-gray4;
 $aleph-query-tag-height: 36px;
 $aleph-table-heading-background: $white;
-$aleph-table-border-color: $darc-gray-200;
+$aleph-table-border-color: $light-gray2;
 $aleph-content-background: $white;
-$aleph-border-color: $darc-gray-200;
+$aleph-border-color: $light-gray2;
 
-$aleph-greyed-text: $darc-gray-500;
+$aleph-greyed-text: $pt-text-color-muted;
 $aleph-theme-intent: $aleph-link-color;
-$aleph-profile-dark: $darc-orange-900;
-$aleph-profile-light: $darc-orange-300;
-$aleph-profile-dark-visited: $darc-orange-800;
+
+// Classic theme: gold profile colors (original Aleph)
+$aleph-profile-dark: $gold2;
+$aleph-profile-light: $gold5;
+$aleph-profile-dark-visited: $gold1;
 
 $aleph-investigation-sidebar-width: $aleph-grid-size * 30;
 $aleph-investigation-theme: $aleph-accent-color;
-$aleph-dataset-theme: $darc-gray-800;
+$aleph-dataset-theme: rgba($dark-gray5, 0.8);
 
-$table-header-color: $darc-orange-300;
+// Classic theme: blue table header
+$table-header-color: $blue3;
 
 $alpeh-preview-pane-width: 1024px;
 $aleph-single-pane-width: 1024px;
@@ -138,23 +146,24 @@ $aleph-sidebar-width: $aleph-grid-size * 35;
 $aleph-sidebar-sm-width: $aleph-grid-size * 20;
 $aleph-sidepane-md-width: $aleph-grid-size * 27;
 
-$aleph-text-highlight-color: rgba($darc-yellow-500, 0.35);
+// Classic theme: gold highlight, standard warning colors
+$aleph-text-highlight-color: rgba($gold5, 0.5);
 $aleph-visited-link-color: rgba($aleph-link-color, 0.6);
-$warning-border-color: $darc-orange-50;
-$warning-background-color: rgba($darc-orange-500, 0.06);
-$warning-text-color: $darc-orange-900;
+$warning-border-color: #faebcc;
+$warning-background-color: #fcf8e3;
+$warning-text-color: #8a6d3b;
 
-$button-color-hover: $darc-orange-900;
-$views-menu-background-color: $darc-gray-600;
+$button-color-hover: #137cbd;
+$views-menu-background-color: rgba(92, 112, 128, 0.5);
 $aleph-error-highlight-color: #d4130d;
 
 // CSS custom properties for inline styles and JS access
 :root {
   --aleph-accent-color: #{$aleph-accent-color};
-  --aleph-intent-primary: #{$pt-intent-primary};
+  --aleph-intent-primary: #{$aleph-accent-color};
 }
 
-// adjust INTER font
+// Classic theme: no letter-spacing adjustment
 * {
-  letter-spacing: -0.02rem;
+  letter-spacing: normal;
 }
