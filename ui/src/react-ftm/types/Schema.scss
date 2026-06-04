@@ -19,33 +19,33 @@
     flex-shrink: 0;
   }
 
-  // Person — DARC orange
+  // Person — classic Blueprint blue (accent)
   &--person {
-    background-color: $darc-orange-50;
-    color: $darc-orange-900;
+    background-color: rgba($accent-color, 0.12);
+    color: $accent-color;
 
     .SchemaIcon {
-      color: $darc-orange-900 !important;
+      color: $accent-color !important;
     }
   }
 
-  // LegalEntity — DARC yellow
+  // LegalEntity — classic Blueprint green
   &--legalentity {
-    background-color: $darc-yellow-50;
-    color: $darc-yellow-900;
+    background-color: rgba(#0f9960, 0.12);
+    color: #0a6640;
 
     .SchemaIcon {
-      color: $darc-yellow-900 !important;
+      color: #0a6640 !important;
     }
   }
 
-  // Document — DARC purple
+  // Document — neutral slate
   &--document {
-    background-color: $darc-purple-50;
-    color: $darc-purple-900;
+    background-color: $darc-gray-100;
+    color: $darc-gray-700;
 
     .SchemaIcon {
-      color: $darc-purple-900 !important;
+      color: $darc-gray-700 !important;
     }
   }
 
